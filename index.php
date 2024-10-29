@@ -70,7 +70,7 @@
         <img src="assets/images/Afribus.png" alt="Project 3 Image" loading="lazy">
         <p>Afribus est une application qui a vu le jour lors d'un projet de fin de cycle.
           C'est un système de reservation de tickets de bus.
-          Pleinement intéractif et fluide elle permet à l'utilisateur de réserver son ticket de bus avec ton téléphone ou son ordinateur portable.
+          Pleinement intéractif et fluide elle permet à l'utilisateur de réserver son ticket de bus avec son téléphone ou son ordinateur portable.
           Il paye sur le site il a la capacité de choisir l'heure, la date et meme le siège de voyage dans le bus.
           Tout est fait pour qu'il n'ait plus à se déplacer pour aller réserver 2 ou 3 heures à l'avance.
         </p>
