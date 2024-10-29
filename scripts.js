@@ -86,3 +86,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+
+// Mode jour et mode nuit
+document.getElementById("theme-toggle").addEventListener("click", function() {
+  document.body.classList.toggle("light-mode");
+
+  // Changer l'image d'arrière-plan en fonction du mode
+  if (document.body.classList.contains("light-mode")) {
+    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
+    localStorage.setItem("theme", "light");
+  } else {
+    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
+    localStorage.setItem("theme", "dark");
+  }
+});
+
+// Maintenir le mode choisi par l'utilisateur même après un rechargement
+window.addEventListener("load", function() {
+  const theme = localStorage.getItem("theme");
+  if (theme === "light") {
+    document.body.classList.add("light-mode");
+    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
+  } else {
+    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
+  }
+});
+

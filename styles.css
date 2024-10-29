@@ -3,21 +3,80 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*
-html, body {
-  overflow-x: hidden;  Empêche le défilement horizontal 
-  width: 100%;
-}*/
- /* General Styling */
-  body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: rgb(25, 25, 25);
-      color: #333;
-    }
-    
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: rgb(25, 25, 25);
+  color: #f2f2f2;
+}
+
+header, .project, footer, .modal-content {
+  background-color: #333;
+  color: white;
+}
+
+#intro {
+  background: url('ASSETS/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+}
+
+/* Mode Jour */
+
+.day-mode header,
+.day-mode #intro .intro-text {
+    color: #333; /* Remplacez par une couleur sombre pour le jour */
+}
+
+body.light-mode {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+body.light-mode header,
+body.light-mode .project,
+body.light-mode footer,
+body.light-mode .modal-content {
+  background-color: #e2e2e2;
+  color: #333;
+}
+
+body.light-mode h2,
+body.light-mode .project-title,
+body.light-mode .project p,
+body.light-mode .skill,
+body.light-mode #moi {
+  color: #333;
+}
+
+body.light-mode #intro {
+  background: url('ASSETS/images/Ousmane_avecfondwhite.svg') no-repeat center center/cover;
+}
+
+/* Bouton Mode Jour/Nuit */
+#theme-toggle {
+  background: none;
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background-color: #ffd700;
+  color: #333;
+}
+
+/* S'assurer que les icônes sociales et les liens changent en fonction du thème */
+body.light-mode footer a,
+body.light-mode .social-media a {
+  color: #333;
+}
+
+footer a:hover,
+.social-media a:hover {
+  color: #ffd700;
+}
     /* style header */
     header {
       background-color: #333;

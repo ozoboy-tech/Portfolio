@@ -18,7 +18,7 @@
         <li><a href="#contact">CONTACT</a></li>
         <li><a href="#" id="view-cv-button">Visualiser</a></li>
         <li><a href="ASSETS/images/CV.pdf" download><img src="assets/images/cv-icon.png" alt="Télécharger le CV" class="cv-icon"> Télécharger</a></li>
-        
+        <button id="theme-toggle">Jour/Nuit</button>
       </ul>
     </nav>
   </header>
@@ -130,5 +130,4 @@
   </div>
 </body>
 <script src="scripts.js" defer></script>
-
 </html>
