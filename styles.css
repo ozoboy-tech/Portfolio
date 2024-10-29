@@ -1,0 +1,479 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+html, body {
+  overflow-x: hidden;  Empêche le défilement horizontal 
+  width: 100%;
+}*/
+ /* General Styling */
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: rgb(25, 25, 25);
+      color: #333;
+    }
+    
+    /* style header */
+    header {
+      background-color: #333;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    
+    nav ul li {
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+        /* Style pour l'icône de téléchargement du CV */
+    .cv-icon {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    /* Style de la modale pour afficher le CV */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    .cv-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    
+    /* Intro Section */
+#intro {
+  background: url('ASSETS/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.intro-text h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  transform: translateY(-300px);
+}
+
+.intro-text p {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 2s infinite;
+  margin-top: -20px; /* Positionnement ajusté juste sous le titre */
+  transform: translateY(-300px); /* Aligné avec le titre pour rester en place */
+}
+
+    
+    /* Section Styling */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    h2 {
+      font-size: 50px;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    #moi {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ffffff; 
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .animate {
+      cursor: pointer; /* Pointeur interactif au survol */
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Animation spécifique pour chaque mot */
+    
+    #ousmane:hover {
+      color: #FFD700; /* Couleur or au survol */
+      transform: scale(1.2); /* Zoom léger */
+    }
+
+    #nouveaux_défis:hover {
+      color: #960808; /* Couleur or au survol */
+      transform: scale(1.2); /* Zoom léger */
+    }
+    
+    #dev-web:hover {
+      color: #00FFFF; /* Couleur cyan */
+      text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF; /* Effet néon */
+    }
+    
+    #javascript:hover {
+      color: #F0DB4F; /* Couleur jaune spécifique à JavaScript */
+      transform: rotate(10deg); /* Légère rotation */
+    }
+    
+    #php:hover {
+      color: #4F5B93; /* Couleur de PHP */
+      transform: skewX(10deg); /* Inclinaison horizontale */
+    }
+    
+    #mysql:hover {
+      color: #00758F; /* Couleur de MYSQL */
+      text-decoration: underline; /* Souligne le texte au survol */
+    }
+    
+    #html:hover {
+      color: #E34C26; /* Couleur HTML5 */
+      font-weight: bold; /* Texte en gras au survol */
+    }
+    
+    #css:hover {
+      color: #264de4; /* Couleur CSS */
+      letter-spacing: 2px; /* Espacement des lettres au survol */
+    }
+    
+    #efficace:hover {
+      color: #32CD32; /* Couleur verte pour signifier l'efficacité */
+      text-transform: uppercase; /* Texte en majuscules au survol */
+    }
+    
+    #ambition:hover {
+      color: #FF4500; /* Couleur rouge-orangée pour symboliser la passion */
+      transform: scale(1.2) rotate(-5deg); /* Zoom avec légère rotation */
+    }
+    
+    #avenir:hover {
+      color: #8A2BE2; /* Couleur violet audacieux */
+      text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2; /* Effet néon violet */
+    }
+    
+    
+    
+    /* Projects Grid */
+  .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+  }
+
+  .project {
+      background-color: rgb(25, 25, 25);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+  }
+
+  .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      border: 2px solid #414141;
+  }
+
+  .project img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 8px; /* Légère bordure arrondie pour l'image */
+      transition: transform 0.3s ease;
+  }
+
+  .project:hover img {
+      transform: scale(1.1); /* Zoom sur l'image au survol */
+  }
+
+  .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #ffffff;
+      transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .project:hover .project-title {
+      color: #007BFF; /* Change la couleur du titre au survol */
+      transform: translateY(-10px); /* Légère élévation du titre au survol */
+  }
+
+  .project p {
+    color: #ffffff; /* Couleur du texte des descriptions (gris moyen) */
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+    
+    /* Skills Grid */
+    
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.skill {
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: bold;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Couleurs spécifiques pour chaque skill */
+
+.skill:nth-child(1) {
+  background-color: #cb3514; 
+  box-shadow: 0 0 10px #ff5733, 0 0 20px #ff5733, 0 0 30px #ff5733;
+}/*
+.skill:nth-child(2) {
+  background-color: #1e90ff; /
+  box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+}
+.skill:nth-child(3) {
+  background-color: #f9a825;
+  box-shadow: 0 0 10px #f9a825, 0 0 20px #f9a825, 0 0 30px #f9a825;
+}
+.skill:nth-child(4) {
+  background-color: #6a1b9a; 
+  box-shadow: 0 0 10px #6a1b9a, 0 0 20px #6a1b9a, 0 0 30px #6a1b9a;
+}
+.skill:nth-child(5) {
+  background-color: #61dbfb; 
+  box-shadow: 0 0 10px #61dbfb, 0 0 20px #61dbfb, 0 0 30px #61dbfb;
+}
+.skill:nth-child(6) {
+  background-color: #00758f; 
+  box-shadow: 0 0 10px #00758f, 0 0 20px #00758f, 0 0 30px #00758f;
+}
+*/
+/* Effet néon au survol */
+.skill:hover {
+  animation: glow-hover 1s infinite alternate;
+}
+
+/* Animation pour la lueur fluorecente */
+/*
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px, 0 0 20px, 0 0 30px;
+  }
+  100% {
+    box-shadow: 0 0 20px, 0 0 30px, 0 0 40px;
+  }
+}
+
+@keyframes glow-hover {
+  0% {
+    box-shadow: 0 0 20px, 0 0 30px, 0 0 40px;
+  }
+  100% {
+    box-shadow: 0 0 40px, 0 0 50px, 0 0 60px;
+  }
+}
+*/
+/*Section footer*/
+footer {
+  background-color: #333;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer nav {
+  margin: 15px 0;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+.social-media {
+  margin-top: 15px;
+}
+
+.social-media a {
+  color: #ffd700;
+  font-size: 20px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #ffffff;
+}  
+
+/* Style de la modale */
+.modalold {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre */
+justify-content: center;
+align-items: center;
+}
+
+/* Contenu de la modale */
+.modal-contentold {
+background-color: #2b2a2a; /* Couleur de fond foncée pour un contraste élégant */
+border-radius: 12px;
+padding: 25px;
+max-width: 450px; /* Largeur maximale */
+width: 80%; /* Largeur adaptable pour les petits écrans */
+max-height: 90vh; /* Hauteur maximale pour éviter le débordement */
+overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse */
+text-align: center;
+color: #f3f3f3; /* Texte plus clair pour contraste */
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombre pour la profondeur */
+position: relative;
+font-family: Arial, sans-serif;
+animation: fadeIn 0.4s ease; /* Animation d'apparition */
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.9); }
+to { opacity: 1; transform: scale(1); }
+}
+
+/* Bouton de fermeture */
+.closeold {
+position: absolute;
+top: 12px;
+right: 15px;
+font-size: 22px;
+cursor: pointer;
+color: #bbb;
+transition: color 0.3s ease;
+}
+
+.closeold:hover {
+color: #ffd700; /* Change la couleur au survol */
+}
+
+/* Formulaire et champs */
+.modal-contentold form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+font-size: 15px;
+color: #f0f0f0;
+}
+
+.modal-contentold input,
+.modal-contentold textarea {
+padding: 12px;
+border: 1px solid #666;
+border-radius: 8px;
+font-size: 15px;
+color: #f3f3f3;
+background-color: #3a3a3a;
+transition: border-color 0.3s ease;
+}
+
+.modal-contentold input:focus,
+.modal-contentold textarea:focus {
+border-color: #ffd700; /* Couleur dorée au focus */
+outline: none;
+}
+
+/* Bouton d'envoi */
+.modal-contentold button {
+padding: 12px;
+background-color: #ffd700;
+border: none;
+border-radius: 8px;
+color: #333;
+cursor: pointer;
+font-weight: bold;
+font-size: 16px;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-contentold button:hover {
+background-color: #e5c100;
+transform: translateY(-2px); /* Légère élévation au survol */
+}
