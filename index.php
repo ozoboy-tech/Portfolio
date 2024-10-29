@@ -51,19 +51,29 @@
     <h2>PROJETS</h2>
     <div class="project-grid">
       <div class="project">
-        <h3 class="project-title">Project 1</h3>
-        <img src="assets/images/projets1.jpeg" alt="Project 1 Image" loading="lazy">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3 class="project-title">PharmaGuard</h3>
+        <img src="assets/images/PharmaGuard.png" alt="Project 1 Image" loading="lazy">
+        <p>Une gestion de pharmacie PharmaGuard est un logiciel qui permet 
+          à une pharmacie de pouvoir gérer sa pharmacie entièrement à travers l'application.
+          Elle intègre tout ce dont la pharmacie a besoin allant de la gestion des produits, aux ventes,
+        à la gestion des stocks, à la gestion des fournisseurs, etc.</p>
       </div>
       <div class="project">
-        <h3 class="project-title">Project 2</h3>
-        <img src="assets/images/projets2.jpeg" alt="Project 2 Image" loading="lazy">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3 class="project-title">Planora</h3>
+        <img src="assets/images/Planora.png" alt="Project 2 Image" loading="lazy">
+        <p>Planora est calendrier intéractif permettant à l'utilisateur de créer 
+          des taches et de pouvoir les déplacer les ajuster les modifier selon sa volonté 
+          et tout est intéractif et fluide.</p>
       </div>
       <div class="project">
-        <h3 class="project-title">Project 3</h3>
-        <img src="assets/images/projets3.jpeg" alt="Project 3 Image" loading="lazy">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3 class="project-title">Afribus</h3>
+        <img src="assets/images/Afribus.png" alt="Project 3 Image" loading="lazy">
+        <p>Afribus est une application qui a vu le jour lors d'un projet de fin de cycle.
+          C'est un système de reservation de tickets de bus.
+          Pleinement intéractif et fluide elle permet à l'utilisateur de réserver son ticket de bus avec ton téléphone ou son ordinateur portable.
+          Il paye sur le site il a la capacité de choisir l'heure, la date et meme le siège de voyage dans le bus.
+          Tout est fait pour qu'il n'ait plus à se déplacer pour aller réserver 2 ou 3 heures à l'avance.
+        </p>
       </div>
     </div>
 </section>
@@ -72,7 +82,7 @@
     <div class="skills-grid">
       <div class="skill">HTML</div>
       <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
+      <div class="skill">JavaScript</div> 
       <div class="skill">PHP</div>
       <div class="skill">REACT</div>
       <div class="skill">MYSQL</div>
@@ -81,7 +91,6 @@
   <footer>
     <p>&copy; 2024 PORTFOLIO</p>
     <p><a href="#" id="contact-form-link">Formulaire de Contact</a></p>
-    
     <nav>
         <a href="#about">À propos</a> |
         <a href="#projects">Projets</a> |
