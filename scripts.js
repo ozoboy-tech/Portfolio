@@ -1,4 +1,3 @@
-
 //Animation des phrases
 const phrases = [
     "Développeur Web",
