@@ -54,17 +54,23 @@ body.light-mode #intro {
 }
 
 /* Bouton Mode Jour/Nuit */
+/* Bouton de bascule de thème */
 #theme-toggle {
-  background: none;
-  border: 1px solid #ffd700;
-  color: #ffd700;
-  padding: 5px 10px;
-  cursor: pointer;
+  position: fixed;       /* Pour que le bouton reste en place */
+  top: 5px;             /* Ajuste la distance depuis le haut */
+  right: 20px;           /* Ajuste la distance depuis la droite */
+  background: none;      /* Retire le fond par défaut */
+  border: none;          /* Retire la bordure par défaut */
+  font-size: 24px;       /* Taille de l'icône */
+  cursor: pointer;       /* Curseur pointeur au survol */
+  outline: none;         /* Supprime les contours au focus */
 }
 
+/* Optionnel : effet de survol */
 #theme-toggle:hover {
-  background-color: #ffd700;
-  color: #333;
+  color: #f39c12;        /* Changer la couleur au survol */
+  transform: scale(1.2); /* Agrandit légèrement l'icône au survol */
+  transition: transform 0.3s ease;
 }
 
 /* S'assurer que les icônes sociales et les liens changent en fonction du thème */

@@ -87,15 +87,20 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 
-// Mode jour et mode nuit
-document.getElementById("theme-toggle").addEventListener("click", function() {
+// Récupération du bouton de bascule de thème
+const themeToggle = document.getElementById("theme-toggle");
+
+// Fonction pour basculer entre les modes et ajuster l'icône
+themeToggle.addEventListener("click", function() {
   document.body.classList.toggle("light-mode");
 
-  // Changer l'image d'arrière-plan en fonction du mode
+  // Changer l'icône du bouton et l'image d'arrière-plan en fonction du mode
   if (document.body.classList.contains("light-mode")) {
+    themeToggle.textContent = "🌞"; // Icône soleil pour le mode clair
     document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
     localStorage.setItem("theme", "light");
   } else {
+    themeToggle.textContent = "🌜"; // Icône lune pour le mode sombre
     document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
     localStorage.setItem("theme", "dark");
   }
@@ -104,11 +109,38 @@ document.getElementById("theme-toggle").addEventListener("click", function() {
 // Maintenir le mode choisi par l'utilisateur même après un rechargement
 window.addEventListener("load", function() {
   const theme = localStorage.getItem("theme");
+
   if (theme === "light") {
     document.body.classList.add("light-mode");
+    themeToggle.textContent = "🌞"; // Icône soleil pour le mode clair
     document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
   } else {
+    themeToggle.textContent = "🌜"; // Icône lune pour le mode sombre
     document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
   }
 });
 
+
+//Script pour l'envoie de mail par smtp
+// Écouter l'événement de soumission du formulaire
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: "ousmaneacoulibaly667@gmail.com",
+    Password: "rosh miyr ldqm scjr",  // Remplacez par le mot de passe d'application
+    To: 'ousmaneacoulibaly667@gmail.com',
+    From: email,
+    Subject: `Message de ${name} via Portfolio`,
+    Body: `Nom: ${name} <br> Email: ${email} <br> Message: <br> ${message}`
+  }).then(
+    message => alert("Email envoyé avec succès !")
+  ).catch(
+    error => alert("Erreur lors de l'envoi de l'email : " + error)
+  );
+});
