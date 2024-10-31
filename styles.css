@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(0, 0, 0);
   color: #f2f2f2;
 }
 
@@ -18,14 +18,14 @@ header, .project, footer, .modal-content {
 }
 
 #intro {
-  background: url('ASSETS/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+  background: url('public/assets/images/Ousmane_avecfond.svg') no-repeat center center/cover;
 }
 
 /* Mode Jour */
 
 .day-mode header,
 .day-mode #intro .intro-text {
-    color: #333; /* Remplacez par une couleur sombre pour le jour */
+    color: #ffffff; /* Remplacez par une couleur sombre pour le jour */
 }
 
 body.light-mode {
@@ -33,12 +33,33 @@ body.light-mode {
   color: #333;
 }
 
+/* Couleurs pour le mode jour */
+body.light-mode header {
+  background-color: #ffffff; /* Fond blanc pour le header en mode jour */
+  color: #333; /* Couleur du texte sombre */
+}
+
+/* Assurez-vous que les liens dans le header sont bien visibles */
+body.light-mode header a {
+  color: #333; /* Couleur des liens en mode jour */
+}
+
+body.light-mode header a:hover {
+  color: #f39c12; /* Couleur au survol des liens */
+}
+
+/*ça c'est pour l'intro*/
+body.light-mode #intro,
+body.light-mode #intro .intro-text {
+  color: #333; /* Couleur sombre pour le mode jour */
+}
+
 body.light-mode header,
 body.light-mode .project,
 body.light-mode footer,
 body.light-mode .modal-content {
-  background-color: #e2e2e2;
-  color: #333;
+  background-color: #a9a9a9;
+  color: #4c4c4c;
 }
 
 body.light-mode h2,
@@ -50,7 +71,34 @@ body.light-mode #moi {
 }
 
 body.light-mode #intro {
-  background: url('ASSETS/images/Ousmane_avecfondwhite.svg') no-repeat center center/cover;
+  background: url('public/assets/images/Ousmane_avecfondwhite.svg') no-repeat center center/cover;
+}
+/* Pour la modale du formulaire de contact*/
+body.light-mode #contact-modal,
+body.light-mode .modal-contentold {
+  background-color: #e2e2e2; /* Fond clair pour le mode jour */
+  color: #333; /* Texte sombre pour le mode jour */
+}
+
+body.light-mode .modal-contentold h2,
+body.light-mode .modal-contentold label,
+body.light-mode .modal-contentold input,
+body.light-mode .modal-contentold textarea,
+body.light-mode .modal-contentold button {
+  color: #333;
+}
+
+/* Optionnel : Pour les champs de saisie et boutons */
+body.light-mode .modal-contentold input,  
+body.light-mode .modal-contentold textarea {
+  background-color: #f9f9f9; /* Fond des champs en mode jour */
+  border: 1px solid #ccc;
+}
+
+body.light-mode .modal-contentold button {
+  background-color: #a3a1a1;
+  color: #333;
+  border: 1px solid #333;
 }
 
 /* Bouton Mode Jour/Nuit */
@@ -85,33 +133,23 @@ footer a:hover,
 }
     /* style header */
     header {
-      background-color: #333;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background-color: #000000;
+      padding: 10px;
+      text-align: center; /* Centre le contenu */
     }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-    }
-    
-    nav ul li {
-      margin: 0 15px;
-    }
-    
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-    
-    nav ul li a:hover {
-      color: #ffd700;
-    }
+  
+  .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+  }
+  
+  .bar {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 2px 0;
+  }
 
         /* Style pour l'icône de téléchargement du CV */
     .cv-icon {
@@ -161,7 +199,7 @@ footer a:hover,
     
     /* Intro Section */
 #intro {
-  background: url('ASSETS/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+  background: url('public/assets/images/Ousmane_avecfond.svg') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -205,77 +243,81 @@ footer a:hover,
       color: #ffffff;
     }
 
+    /* Style de base pour le texte */
     #moi {
       font-size: 1.2em;
       line-height: 1.6;
       color: #ffffff; 
       text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Monospace', Lucida Console;
+    }
+    
+    /* Animation de base sans agrandissement */
+    @keyframes wordAnimation {
+      0%, 20%, 100% { color: inherit; text-shadow: none; }
+      40%, 60% { color: var(--color); text-shadow: 0 0 10px var(--color), 0 0 20px var(--color); }
     }
     
     .animate {
-      cursor: pointer; /* Pointeur interactif au survol */
-      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      animation: wordAnimation 2s ease-in-out forwards;
     }
     
-    /* Animation spécifique pour chaque mot */
+    /* Ajout de délais séquentiels pour chaque mot */
+    #ousmane {
+      --color: #FFD700;
+      animation-delay: 0s;
+    }
     
-    #ousmane:hover {
-      color: #FFD700; /* Couleur or au survol */
-      transform: scale(1.2); /* Zoom léger */
+    #dev-web {
+      --color: #00FFFF;
+      animation-delay: 2s;
     }
 
-    #nouveaux_défis:hover {
-      color: #960808; /* Couleur or au survol */
-      transform: scale(1.2); /* Zoom léger */
+    #nouveaux_défis {
+      --color: #960808;
+      animation-delay: 4s;
+    }
+  
+    #javascript {
+      --color: #F0DB4F;
+      animation-delay: 6s;
     }
     
-    #dev-web:hover {
-      color: #00FFFF; /* Couleur cyan */
-      text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF; /* Effet néon */
+    #php {
+      --color: #4F5B93;
+      animation-delay: 8s;
     }
     
-    #javascript:hover {
-      color: #F0DB4F; /* Couleur jaune spécifique à JavaScript */
-      transform: rotate(10deg); /* Légère rotation */
+    #mysql {
+      --color: #00758F;
+      animation-delay: 10s;
     }
     
-    #php:hover {
-      color: #4F5B93; /* Couleur de PHP */
-      transform: skewX(10deg); /* Inclinaison horizontale */
+    #html {
+      --color: #E34C26;
+      animation-delay: 12s;
     }
     
-    #mysql:hover {
-      color: #00758F; /* Couleur de MYSQL */
-      text-decoration: underline; /* Souligne le texte au survol */
+    #css {
+      --color: #264de4;
+      animation-delay: 14s;
     }
     
-    #html:hover {
-      color: #E34C26; /* Couleur HTML5 */
-      font-weight: bold; /* Texte en gras au survol */
+    #efficace {
+      --color: #32CD32;
+      animation-delay: 16s;
     }
     
-    #css:hover {
-      color: #264de4; /* Couleur CSS */
-      letter-spacing: 2px; /* Espacement des lettres au survol */
+    #ambition {
+      --color: #FF4500;
+      animation-delay: 18s;
     }
     
-    #efficace:hover {
-      color: #32CD32; /* Couleur verte pour signifier l'efficacité */
-      text-transform: uppercase; /* Texte en majuscules au survol */
+    #avenir {
+      --color: #8A2BE2;
+      animation-delay: 20s;
     }
-    
-    #ambition:hover {
-      color: #FF4500; /* Couleur rouge-orangée pour symboliser la passion */
-      transform: scale(1.2) rotate(-5deg); /* Zoom avec légère rotation */
-    }
-    
-    #avenir:hover {
-      color: #8A2BE2; /* Couleur violet audacieux */
-      text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2; /* Effet néon violet */
-    }
-    
-    
     
     /* Projects Grid */
   .project-grid {
@@ -285,9 +327,9 @@ footer a:hover,
   }
 
   .project {
-      background-color: rgb(25, 25, 25);
+      background-color: rgb(0, 0, 0);
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(163, 103, 242, 0.458);
       transition: transform 0.3s ease;
       text-align: center;
   }
@@ -295,7 +337,7 @@ footer a:hover,
   .project:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      border: 2px solid #414141;
+      border: 2px solid #000000;
   }
 
   .project img {
@@ -318,7 +360,7 @@ footer a:hover,
   }
 
   .project:hover .project-title {
-      color: #007BFF; /* Change la couleur du titre au survol */
+      color: #5d3aa7; /* Change la couleur du titre au survol */
       transform: translateY(-10px); /* Légère élévation du titre au survol */
   }
 
@@ -406,7 +448,7 @@ footer a:hover,
 }*/
 /*Section footer*/
 footer {
-  background-color: rgb(25, 25, 25);
+  background-color: rgb(0, 0, 0);
   color: #f2f2f2;
   text-align: center;
   padding: 20px;
@@ -543,4 +585,130 @@ transition: background-color 0.3s ease, transform 0.2s ease;
 .modal-contentold button:hover {
 background-color: #e5c100;
 transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+
+/* Adaptations mobiles */
+@media (max-width: 768px) {
+
+  /* Animation d'apparition pour l'intro */
+  .intro-text {
+    opacity: 0;
+    transform: translateY(-50px); /* Commence plus haut */
+    animation: slideDown 0.6s ease-out forwards;
+  }
+
+  /* Ajustement de la taille du texte dans l'intro */
+  .intro-text h1 {
+    font-size: 32px;
+    transform: translateY(-240px);
+  }
+
+  .intro-text p {
+    font-size: 18px;
+    transform: translateY(-230px);
+  }
+
+  /* Animation d'apparition pour chaque section */
+  section {
+    padding: 30px 10px;
+    opacity: 0;
+    transform: translateY(50px); /* Commence plus bas */
+    animation: fadeInUp 0.7s ease-out forwards;
+    animation-delay: 0.3s; /* Différentiel pour une animation fluide */
+  }
+
+  /* Animation d'apparition pour le titre des sections */
+  h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  /* Menu de navigation en colonne avec animation */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Animation pour les éléments du projet */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project {
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+
+  /* Grille des compétences avec animation */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  /* Adaptation du bouton de bascule de thème pour mobile */
+  #theme-toggle {
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.6s;
+  }
+
+  /* Taille de la modale et image */
+  .modal-content {
+    max-width: 90%;
+    padding: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.7s;
+  }
+
+  .cv-image {
+    width: 80%;
+    max-width: 300px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.7s;
+  }
+}
+
+/* Keyframes pour les animations */
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

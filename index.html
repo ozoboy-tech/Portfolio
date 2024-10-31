@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,29 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body><!--
   <header>
     <nav>
-      <ul>
-        <li><a href="#about">MOI</a></li>
-        <li><a href="#projects">PROJETS</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#" id="view-cv-button">Visualiser</a></li>
-        <li><a href="public/ASSETS/images/CV.pdf" download><img src="assets/images/cv-icon.png" alt="Télécharger le CV" class="cv-icon"> Télécharger</a></li>
-        <button id="theme-toggle" aria-label="Toggle theme">🌞</button>
-      </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul>
+            <li><a href="#about">Présentation</a></li>
+            <li><a href="#projects">PROJETS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#" id="view-cv-button">Visualiser</a></li>
+            <li><a href="public/assets/images/CV.pdf" download><img src="public/assets/images/cv-icon.png" alt="Télécharger le CV" class="cv-icon"> Télécharger</a></li>
+            
+        </ul>
     </nav>
-  </header>
-
+</header>
+<header>
+  <button id="theme-toggle" aria-label="Toggle theme">🌞</button>
+</header>
+-->
   <div id="cv-modal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -37,7 +45,7 @@
   </section>
 
   <section id="about">
-    <h2><b>MOI</b></h2>
+    <h2><b>Présentation</b></h2>
     <p id="moi">
     Je m'appelle <span class="animate" id="ousmane">Ousmane</span>, passionné par le <span class="animate" id="dev-web">développement web</span> et toujours en quête de <span class="animate" id="nouveaux_défis">nouveaux défis</span>.<br> 
     J'aime transformer des idées complexes en solutions web dynamiques, alliant front-end et back-end.<br> 
@@ -46,28 +54,29 @@
     Mon <span class="animate" id="ambition">ambition</span> ? Me surpasser à chaque projet, apprendre en continu et contribuer à un avenir <span class="animate" id="avenir">numérique audacieux</span>.
 </p>
   </section>
+  
   <section id="projects">
     <h2>PROJETS</h2>
     <div class="project-grid">
       <div class="project">
         <h3 class="project-title">PharmaGuard</h3>
-        <img src="/assets/images/PharmaGuard.png" alt="Project 1 Image" loading="lazy">
-        <p>Une gestion de pharmacie PharmaGuard est un logiciel qui permet 
+        <img src="public/assets/images/PharmaGuard.png" alt="Project 1 Image" loading="lazy">
+        <p>Une gestion de pharmacie,<b>PharmaGuard</b>  est un logiciel qui permet 
           à une pharmacie de pouvoir gérer sa pharmacie entièrement à travers l'application.
           Elle intègre tout ce dont la pharmacie a besoin allant de la gestion des produits, aux ventes,
         à la gestion des stocks, à la gestion des fournisseurs, etc.</p>
       </div>
       <div class="project"> 
         <h3 class="project-title">Planora</h3>
-        <img src="assets/images/Planora.png" alt="Project 2 Image" loading="lazy">
-        <p>Planora est calendrier intéractif permettant à l'utilisateur de créer 
+        <img src="public/assets/images/Planora.png" alt="Project 2 Image" loading="lazy">
+        <p><b>Planora</b> est calendrier intéractif permettant à l'utilisateur de créer 
           des taches et de pouvoir les déplacer les ajuster les modifier selon sa volonté 
           et tout est intéractif et fluide.</p>
       </div>
       <div class="project">
         <h3 class="project-title">Afribus</h3>
-        <img src="assets/images/Afribus.png" alt="Project 3 Image" loading="lazy">
-        <p>Afribus est une application qui a vu le jour lors d'un projet de fin de cycle.
+        <img src="public/assets/images/Afribus.png" alt="Project 3 Image" loading="lazy">
+        <p><b>Afribus</b> est une application qui a vu le jour lors d'un projet de fin de cycle.
           C'est un système de reservation de tickets de bus.
           Pleinement intéractif et fluide elle permet à l'utilisateur de réserver son ticket de bus avec son téléphone ou son ordinateur portable.
           Il paye sur le site il a la capacité de choisir l'heure, la date et meme le siège de voyage dans le bus.

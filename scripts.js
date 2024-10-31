@@ -96,11 +96,11 @@ themeToggle.addEventListener("click", function() {
   // Changer l'icône du bouton et l'image d'arrière-plan en fonction du mode
   if (document.body.classList.contains("light-mode")) {
     themeToggle.textContent = "🌞"; // Icône soleil pour le mode clair
-    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
+    document.getElementById("intro").style.backgroundImage = "url('public/assets/images/Ousmane_avecfondwhite.svg')";
     localStorage.setItem("theme", "light");
   } else {
     themeToggle.textContent = "🌜"; // Icône lune pour le mode sombre
-    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
+    document.getElementById("intro").style.backgroundImage = "url('public/assets/images/Ousmane_avecfond.svg')";
     localStorage.setItem("theme", "dark");
   }
 });
@@ -112,10 +112,10 @@ window.addEventListener("load", function() {
   if (theme === "light") {
     document.body.classList.add("light-mode");
     themeToggle.textContent = "🌞"; // Icône soleil pour le mode clair
-    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfondwhite.svg')";
+    document.getElementById("intro").style.backgroundImage = "url('public/assets/images/Ousmane_avecfondwhite.svg')";
   } else {
     themeToggle.textContent = "🌜"; // Icône lune pour le mode sombre
-    document.getElementById("intro").style.backgroundImage = "url('ASSETS/images/Ousmane_avecfond.svg')";
+    document.getElementById("intro").style.backgroundImage = "url('public/assets/images/Ousmane_avecfond.svg')";
   }
 });
 
