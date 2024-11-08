@@ -1,3 +1,21 @@
+//Animation de chargement
+document.addEventListener("DOMContentLoaded", function() {
+  window.addEventListener("load", function() {
+      document.getElementById("loader")
+      document.getElementById("content")
+      // Ajoute une classe pour déclencher le fondu de sortie
+      loader.classList.add("fade-out");
+
+      // Retarde l'affichage du contenu pour un fondu d'entrée fluide
+      setTimeout(() => {
+          loader.style.display = "none";
+          content.style.display = "block";
+          content.classList.add("fade-in");
+      }, 1000); // Durée du fondu de sortie (ajustable si besoin)
+  });
+});
+
+
 //Animation des phrases
 const phrases = [
     "Développeur Web",
@@ -39,7 +57,7 @@ sections.forEach(section => {
 });
 
 
-//affichage de la modale pour le cv
+/*//affichage de la modale pour le cv
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("cv-modal");
     const viewCVButton = document.getElementById("view-cv-button");
@@ -59,33 +77,36 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
-  
+  */
   //Affichage de la modale pour le formulaire de contact dans le footer
   document.addEventListener("DOMContentLoaded", function () {
     // Ouvrir la modale de contact
     const contactFormLink = document.getElementById("contact-form-link");
     const contactModal = document.getElementById("contact-modal");
-    const closeModal = document.querySelector(".modal .close");
+    const closeModal = document.querySelector(".modalold .closeold");
   
-    contactFormLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      contactModal.style.display = "flex";
-    });
+    if (contactFormLink && contactModal && closeModal) {
+      contactFormLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        contactModal.style.display = "flex";
+      });
   
-    // Fermer la modale
-    closeModal.addEventListener("click", function () {
-      contactModal.style.display = "none";
-    });
-  
-    // Fermer la modale en cliquant en dehors du contenu
-    window.addEventListener("click", function (e) {
-      if (e.target == contactModal) {
+      // Fermer la modale en cliquant sur le bouton de fermeture
+      closeModal.addEventListener("click", function () {
         contactModal.style.display = "none";
-      }
-    });
+      });
+  
+      // Fermer la modale en cliquant en dehors du contenu
+      window.addEventListener("click", function (e) {
+        if (e.target === contactModal) {
+          contactModal.style.display = "none";
+        }
+      });
+    }
   });
   
-
+  
+/*
 // Récupération du bouton de bascule de thème
 const themeToggle = document.getElementById("theme-toggle");
 
@@ -118,28 +139,29 @@ window.addEventListener("load", function() {
     document.getElementById("intro").style.backgroundImage = "url('public/assets/images/Ousmane_avecfond.svg')";
   }
 });
+*/
 
-
-//Script pour l'envoie de mail par smtp
-// Écouter l'événement de soumission du formulaire
+//Script pour l'envoie de mail par smtpjs
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault();
 
   const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
+  const userEmail = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
   Email.send({
-    Host: "smtp.gmail.com",
-    Username: "ousmaneacoulibaly667@gmail.com",
-    Password: "rosh miyr ldqm scjr",  // Remplacez par le mot de passe d'application
-    To: 'ousmaneacoulibaly667@gmail.com',
-    From: email,
-    Subject: `Message de ${name} via Portfolio`,
-    Body: `Nom: ${name} <br> Email: ${email} <br> Message: <br> ${message}`
+    Host: "smtp.mail.yahoo.com",
+    Username: "ousmanecoulibaly9@yahoo.com",             // Votre adresse Yahoo
+    Password: "votre_mot_de_passe_d_application",    // Mot de passe d'application Yahoo
+    To: "ousmanecoulibaly9@yahoo.com",                   // Votre adresse email pour recevoir le message
+    From: userEmail,                                 // L'email de l'utilisateur pour le champ "De"
+    Subject: `Message de ${name} depuis le portfolio`, // Sujet de l'email
+    Body: `Nom: ${name} <br> Email: ${userEmail} <br> Message: <br> ${message}`,  // Corps du message avec les détails
+    ReplyTo: userEmail                               // Permet de répondre directement à l'utilisateur
   }).then(
-    message => alert("Email envoyé avec succès !")
+    message => alert("Votre message a été envoyé avec succès !")
   ).catch(
-    error => alert("Erreur lors de l'envoi de l'email : " + error)
+    error => alert("Erreur lors de l'envoi du message : " + error)
   );
 });
+

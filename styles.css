@@ -17,6 +17,82 @@ header, .project, footer, .modal-content {
   color: white;
 }
 
+/* Style de la page de chargement */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  z-index: 9999;
+}
+
+/* Cercle de chargement */
+.loading-circle {
+  width: 80px;
+  height: 80px;
+  border: 8px solid #3498db;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: rotate 1s infinite linear, pulse 1.5s infinite ease-in-out;
+}
+
+/* Texte de chargement */
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3498db;
+  animation: color-change 2s infinite;
+}
+
+/* Animation de rotation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Animation de changement de couleur pour le texte */
+@keyframes color-change {
+  0%, 100% { color: #3498db; }
+  50% { color: #e74c3c; }
+}
+
+/* Animation de fondu en sortie */
+.fade-out {
+  animation: fadeOut 1s forwards; /* 1s pour un fondu rapide */
+}
+
+/* Animation de fondu en entrée */
+.fade-in {
+  opacity: 0; /* Début invisible */
+  animation: fadeIn 1.5s forwards; /* Durée ajustable pour un fondu plus lent */
+}
+
+/* Définition de l'animation fadeOut */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Définition de l'animation fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 #intro {
   background: url('public/assets/images/Ousmane_avecfond.svg') no-repeat center center/cover;
 }
