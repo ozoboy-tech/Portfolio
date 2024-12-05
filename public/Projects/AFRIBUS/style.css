@@ -1,0 +1,170 @@
+/* Réinitialisation générale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #f2f2f2;
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #4bffd2 0%,
+        #20e25b 60%,
+        #005006 80%,
+        #000000 100%
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    transition: background 1s ease-in-out;
+}
+
+/* Header, footer et contenu principal */
+header,
+.project,
+footer,
+.modal-content {
+    background-color: #333;
+    color: white;
+    border-radius: 10px; /* Adoucit les bords */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ajoute une ombre discrète */
+}
+
+/* Section d'introduction */
+#intro {
+    background: url('assets/images/afribusback.png') no-repeat center center / cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    color: #ffffff;
+    position: relative;
+    transition: background 1s ease-in-out;
+    animation: fadeIn 2s ease-in-out; /* Animation d'apparition */
+}
+
+#intro h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: slideDown 1.5s ease-out; /* Animation de descente */
+}
+
+#intro p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    line-height: 1.8;
+    margin-top: 1rem;
+    animation: fadeIn 2s ease-in-out 1s; /* Apparition progressive avec délai */
+}
+
+/* Contenu principal */
+main {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ajout d'ombre au texte */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#pharmaguard {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Monospace', Lucida Console;
+    animation: zoomIn 1.5s ease-in-out; /* Zoom progressif */
+}
+
+/* Cartes de fonctionnalités */
+.feature-container {
+    display: flex; /* Active Flexbox */
+    flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-around; /* Espace équilibré entre les cartes */
+    gap: 20px; /* Espacement entre les cartes */
+    margin: 50px auto;
+    padding: 0 20px; /* Ajout d'espace sur les côtés */
+}
+
+.feature-card {
+    margin: 0; /* Suppression des marges automatiques */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'ombre */
+    width: 300px; /* Largeur fixe pour un bon alignement */
+    flex: 1 1 calc(33.333% - 40px); /* Largeur relative pour s'adapter aux tailles d'écran */
+    max-width: 350px; /* Limite la largeur maximale */
+    min-width: 250px; /* Limite la largeur minimale */
+}
+
+.feature-card:hover {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    background: rgba(193, 41, 41, 0.2);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    animation: slideUp 1.5s ease-in-out; /* Animation de montée */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

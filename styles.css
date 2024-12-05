@@ -12,6 +12,37 @@ body {
   color: #f2f2f2;
 }
 
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+/* Animation de chute */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100%)); /* Descend jusqu'en bas de la page entière */
+    opacity: 0;
+  }
+}
+
+
 header, .project, footer, .modal-content {
   background-color: #333;
   color: white;
@@ -31,27 +62,6 @@ header, .project, footer, .modal-content {
   background-color: #111;
   z-index: 9999;
 }
-
-/* Cercle de chargement */
-.loading-circle {
-  width: 80px;
-  height: 80px;
-  border: 8px solid #3498db;
-  border-radius: 50%;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  animation: rotate 1s infinite linear, pulse 1.5s infinite ease-in-out;
-}
-
-/* Texte de chargement */
-.loading-text {
-  margin-top: 20px;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #3498db;
-  animation: color-change 2s infinite;
-}
-
 /* Animation de rotation */
 @keyframes rotate {
   from { transform: rotate(0deg); }
@@ -94,7 +104,7 @@ header, .project, footer, .modal-content {
 }
 
 #intro {
-  background: url('public/assets/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+  background: url('public/assets/images/Ousmane_avec_fond.png') no-repeat center center/cover;
 }
 
 /* Mode Jour */
@@ -273,9 +283,9 @@ footer a:hover,
     }
 
     
-    /* Intro Section */
+  
 #intro {
-  background: url('public/assets/images/Ousmane_avecfond.svg') no-repeat center center/cover;
+  background: url('public/assets/images/Ousmane_avec_fond.png') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -420,12 +430,12 @@ footer a:hover,
       width: 100%;
       height: auto;
       margin-bottom: 15px;
-      border-radius: 8px; /* Légère bordure arrondie pour l'image */
+      border-radius: 8px; 
       transition: transform 0.3s ease;
   }
 
   .project:hover img {
-      transform: scale(1.1); /* Zoom sur l'image au survol */
+      transform: scale(1.1);
   }
 
   .project-title {
@@ -434,14 +444,22 @@ footer a:hover,
       color: #ffffff;
       transition: color 0.3s ease, transform 0.3s ease;
   }
-
+  
+  
+  .project-status {
+    font-size: 0.9em;
+    color: #ff5722; /* Couleur rouge/orange pour attirer l'attention */
+    font-style: italic;
+    margin-left: 5px;
+  }
+  
   .project:hover .project-title {
-      color: #5d3aa7; /* Change la couleur du titre au survol */
-      transform: translateY(-10px); /* Légère élévation du titre au survol */
+      color: #5d3aa7; 
+      transform: translateY(-10px); 
   }
 
   .project p {
-    color: #ffffff; /* Couleur du texte des descriptions (gris moyen) */
+    color: #ffffff; 
     font-size: 1em;
     line-height: 1.6;
   }
@@ -449,79 +467,117 @@ footer a:hover,
     
     /* Skills Grid */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Augmenter l'espacement entre les éléments */
-}
-
-.skill {
-  color: white;
-  padding: 15px;
-  text-align: center;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  font-weight: bold;
-  background-color: #2e2e2e; /* Fond plus sombre */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out; /* Adoucissement du survol */
-}
-
-/* Couleurs spécifiques pour chaque skill avec des tons plus sombres */
-
-.skill:nth-child(1) {
-  background-color: #4a2c2a;
-  box-shadow: 0 0 8px #4a2c2a;
-}
-.skill:nth-child(2) {
-  background-color: #264653;
-  box-shadow: 0 0 8px #264653;
-}
-.skill:nth-child(3) {
-  background-color: #6a994e;
-  box-shadow: 0 0 8px #6a994e;
-}
-.skill:nth-child(4) {
-  background-color: #3d348b;
-  box-shadow: 0 0 8px #3d348b;
-}
-.skill:nth-child(5) {
-  background-color: #2c7da0;
-  box-shadow: 0 0 8px #2c7da0;
-}
-.skill:nth-child(6) {
-  background-color: #3a0ca3;
-  box-shadow: 0 0 8px #3a0ca3;
-}
-
-/* Effet de survol adouci */
-.skill:hover {
-  transform: scale(1.05); /* Augmentation légère de la taille */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Lueur adoucie */
-}
-
-
-/* Animation pour la lueur fluorecente */
-/*
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px, 0 0 20px, 0 0 30px;
-  }
-  100% {
-    box-shadow: 0 0 20px, 0 0 30px, 0 0 40px;
-  }
-}
-
-@keyframes glow-hover {
-  0% {
-    box-shadow: 0 0 20px, 0 0 30px, 0 0 40px;
-  }
-  100% {
-    box-shadow: 0 0 40px, 0 0 50px, 0 0 60px;
-  }
-}*/
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px; /* Espacement entre les cartes */
+      padding: 20px;
+    }
+    
+    .skill {
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: #2e2e2e; /* Fond neutre pour le contenu */
+      z-index: 1; /* Assure que le texte est visible */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out; /* Animation de survol */
+    }
+    
+    /* Animation lumineuse */
+    .skill::before,
+    .skill::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      z-index: -1; /* Derrière le texte */
+      border-radius: inherit;
+      animation: rotation 3s linear infinite; /* Rotation dynamique */
+    }
+    
+    /* Couleurs spécifiques pour chaque skill */
+    .skill:nth-child(1)::before,
+    .skill:nth-child(1)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #f3602a, #ff4500, #4e1c09
+      );
+    }
+    
+    .skill:nth-child(2)::before,
+    .skill:nth-child(2)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #0a529b, #00bfff, #03386e
+      );
+    }
+    
+    .skill:nth-child(3)::before,
+    .skill:nth-child(3)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #1bb81b, #7cfc00, #066706
+      );
+    }
+    
+    .skill:nth-child(4)::before,
+    .skill:nth-child(4)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #7119c2, #9400d3, #3e096f
+      );
+    }
+    
+    .skill:nth-child(5)::before,
+    .skill:nth-child(5)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #93edef, #20b2aa, #00b8bb
+      );
+    }
+    
+    .skill:nth-child(6)::before,
+    .skill:nth-child(6)::after {
+      background: conic-gradient(
+        from var(--gradient-angle),
+        #ff4bab, #ff69b4, #65093a
+      );
+    }
+    
+    /* Effet de flou pour la lueur */
+    .skill::after {
+      filter: blur(20px); /* Effet de lueur */
+      opacity: 0.7; /* Légère transparence */
+    }
+    
+    /* Déclaration de la variable CSS */
+    @property --gradient-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    
+    /* Animation de rotation */
+    @keyframes rotation {
+      0% {
+        --gradient-angle: 0deg;
+      }
+      100% {
+        --gradient-angle: 360deg;
+      }
+    }
+    
+    /* Effet de survol pour zoom */
+    .skill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Accentuation de la lueur */
+    }
+       
 /*Section footer*/
 footer {
   background-color: rgb(0, 0, 0);
@@ -550,6 +606,73 @@ footer a {
 
 footer a:hover {
   color: #ffffff;
+}
+h5{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  .word-animation{
+    height: 25px;
+    overflow: hidden;
+    span{
+      color: #FFD700;
+      display: block;
+      animation: rotateSpin 4s infinite;
+      
+      &.tel{
+        color:#FFD700;
+      }
+      &.tel2{
+        color: #FFD700;
+      }
+      &.me{
+        color: #FFD700;
+      }
+      &.mail{
+        color: #FFD700;
+      }
+    }
+  }
+}
+
+@keyframes rotateSpin {
+  10% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+  }
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+35% {
+  -webkit-transform: translateY(-202%);
+  transform: translateY(-202%);
+}
+50% {
+  -webkit-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+60% {
+  -webkit-transform: translateY(-302%);
+  transform: translateY(-302%);
+}
+75% {
+  -webkit-transform: translateY(-300%);
+  transform: translateY(-300%);
+}
+85% {
+  -webkit-transform: translateY(-402%);
+  transform: translateY(-402%);
+}
+100% {
+  -webkit-transform: translateY(-400%);
+  transform: translateY(-400%);
+}
 }
 
 .social-media {

@@ -7,14 +7,16 @@
   <link rel="icon" href="public/assets/images/icon.svg" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
 </head>
 <body>
-  
   <div id="loader">
-    <div class="loading-circle"></div>
-    <p class="loading-text">Chargement du Portfolio</p>
+    <video src="public/assets/videos/13232-246463976.mp4" autoplay muted loop></video>
   </div>
+
   
+  <div class="stars"></div>
+
   <!--
   <header>
     <nav>
@@ -30,7 +32,6 @@
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="#" id="view-cv-button">Visualiser</a></li>
             <li><a href="public/assets/images/CV.pdf" download><img src="public/assets/images/cv-icon.png" alt="Télécharger le CV" class="cv-icon"> Télécharger</a></li>
-            
         </ul>
     </nav>
 </header>
@@ -62,37 +63,48 @@
     Mon <span class="animate" id="ambition">ambition</span> ? Me surpasser à chaque projet, apprendre en continu et contribuer à un avenir <span class="animate" id="avenir">numérique audacieux</span>.
 </p>
   </section>
-  
   <section id="projects">
     <h2>PROJETS</h2>
     <div class="project-grid">
       <div class="project">
-        <h3 class="project-title">PharmaGuard</h3>
-        <img src="public/assets/images/PharmaGuard.png" alt="Project 1 Image" loading="lazy">
-        <p>Une gestion de pharmacie,<b>PharmaGuard</b>  est un logiciel qui permet 
+        <h3 class="project-title">
+          PharmaGuard
+          <span class="project-status"> - En cours de production</span>
+        </h3>
+        <!--<a href="public/Projects/PHARMAGUARD/index.html" target="_blank">-->
+          <img src="public/assets/images/PharmaGuard.png" alt="Project 1 Image" loading="lazy"></a>
+        <p>Une gestion de pharmacie, <b>PharmaGuard</b> est un logiciel qui permet 
           à une pharmacie de pouvoir gérer sa pharmacie entièrement à travers l'application.
           Elle intègre tout ce dont la pharmacie a besoin allant de la gestion des produits, aux ventes,
-        à la gestion des stocks, à la gestion des fournisseurs, etc.</p>
+          à la gestion des stocks, à la gestion des fournisseurs, etc.</p>
       </div>
       <div class="project"> 
-        <h3 class="project-title">Planora</h3>
+        <h3 class="project-title">
+          Planora
+          <span class="project-status"> - En cours de production</span>
+        </h3>
         <img src="public/assets/images/Planora.png" alt="Project 2 Image" loading="lazy">
-        <p><b>Planora</b> est calendrier intéractif permettant à l'utilisateur de créer 
-          des taches et de pouvoir les déplacer les ajuster les modifier selon sa volonté 
-          et tout est intéractif et fluide.</p>
+        <p><b>Planora</b> est calendrier interactif permettant à l'utilisateur de créer 
+          des tâches et de pouvoir les déplacer, les ajuster, les modifier selon sa volonté, 
+          et tout est interactif et fluide.</p>
       </div>
       <div class="project">
-        <h3 class="project-title">Afribus</h3>
-        <img src="public/assets/images/Afribus.png" alt="Project 3 Image" loading="lazy">
+        <h3 class="project-title">
+          Afribus
+          <span class="project-status"> - En cours de production</span>
+        </h3>
+       <!-- <a href="public/Projects/AFRIBUS/index.html" target="_blank">-->
+        <img src="public/assets/images/Afribus.png" alt="Project 3 Image" loading="lazy"></a>
         <p><b>Afribus</b> est une application qui a vu le jour lors d'un projet de fin de cycle.
-          C'est un système de reservation de tickets de bus.
-          Pleinement intéractif et fluide elle permet à l'utilisateur de réserver son ticket de bus avec son téléphone ou son ordinateur portable.
-          Il paye sur le site il a la capacité de choisir l'heure, la date et meme le siège de voyage dans le bus.
+          C'est un système de réservation de tickets de bus.
+          Pleinement interactif et fluide, elle permet à l'utilisateur de réserver son ticket de bus avec son téléphone ou son ordinateur portable.
+          Il paye sur le site et a la capacité de choisir l'heure, la date et même le siège de voyage dans le bus.
           Tout est fait pour qu'il n'ait plus à se déplacer pour aller réserver 2 ou 3 heures à l'avance.
         </p>
       </div>
     </div>
 </section>
+
   <section id="skills">
     <h2>SKILLS</h2>
     <div class="skills-grid">
@@ -112,10 +124,16 @@
         <a href="#projects">Projets</a> |
         <a href="#services">Services</a> |
         <a href="#testimonials">Témoignages</a> |
-        <a href="mailto:ozoboy100@gmail.com">ozoboy100@gmail.com</a>
- 
+        <h5>
+          <div class="word-animation">
+            <span class="mail">ozoboy100@gmail.com</span>
+            <span class="tel">+223 64-03-16-95</span>
+            <span class="tel2">+223 90-34-93-02</span>
+            <span class="me">N'hésitez pas</span>
+            <span class="mail">ozoboy100@gmail.com</span>
+          </div>
+        </h5>
     </nav>
-
     <div class="social-media">
         <a href="https://www.linkedin.com/in/ousmane-alou-coulibaly-077882221/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         <a href="https://github.com/ozoboy-tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -123,7 +141,6 @@
         <a href="https://wa.me/22364031695" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
 </footer>
-
   <!-- Formulaire de contact dans une modale cachée -->
   <div id="contact-modal" class="modalold">
     <div class="modal-contentold">

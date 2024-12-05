@@ -1,20 +1,26 @@
-//Animation de chargement
-document.addEventListener("DOMContentLoaded", function() {
-  window.addEventListener("load", function() {
-      document.getElementById("loader")
-      document.getElementById("content")
-      // Ajoute une classe pour déclencher le fondu de sortie
-      loader.classList.add("fade-out");
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("loader");
+  const content = document.getElementById("content");
+  const video = loader.querySelector("video");
 
-      // Retarde l'affichage du contenu pour un fondu d'entrée fluide
-      setTimeout(() => {
-          loader.style.display = "none";
-          content.style.display = "block";
-          content.classList.add("fade-in");
-      }, 1000); // Durée du fondu de sortie (ajustable si besoin)
+  // Temps maximum d'attente (en millisecondes)
+  const maxWaitTime = 9000; // 15 secondes
+
+  const showContent = () => {
+    loader.classList.add("fade-out");
+    setTimeout(() => {
+      loader.style.display = "none";
+      content.style.display = "block";
+      content.classList.add("fade-in");
+    }, 500); // Durée du fondu de sortie
+  };
+
+  // Lorsque la page est chargée
+  window.addEventListener("load", function () {
+    video.onended = showContent; // Fin de la vidéo
+    setTimeout(showContent, maxWaitTime); // Temps maximum atteint
   });
 });
-
 
 //Animation des phrases
 const phrases = [
@@ -165,3 +171,40 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   );
 });
 
+//animation des etoiles
+const starsContainer = document.querySelector('.stars');
+
+function createStar() {
+  const star = document.createElement('div');
+  star.classList.add('star');
+
+  // Position aléatoire pour l'étoile
+  const xPosition = Math.random() * window.innerWidth;
+  const size = Math.random() * 3 + 1; // Taille aléatoire entre 1px et 4px
+  const duration = Math.random() * 5 + 3; // Durée entre 3s et 8s
+  const delay = Math.random() * 5; // Délai initial jusqu'à 5s
+
+  // Ajuste la durée de l'animation en fonction de la hauteur totale du document
+  const totalHeight = document.documentElement.scrollHeight; // Hauteur totale de la page
+  const animationHeight = totalHeight + window.innerHeight; // Hauteur totale à parcourir
+
+  // Applique les styles
+  star.style.left = `${xPosition}px`;
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+  star.style.animationDuration = `${duration}s`;
+  star.style.animationDelay = `${delay}s`;
+
+  // Ajoute un style personnalisé pour descendre jusqu'à la hauteur totale
+  star.style.setProperty('--animation-height', `${animationHeight}px`);
+
+  starsContainer.appendChild(star);
+
+  // Supprimer l'étoile une fois l'animation terminée
+  setTimeout(() => {
+    star.remove();
+  }, (duration + delay) * 10000);
+}
+
+// Générer des étoiles en continu
+setInterval(createStar, 100); // Une étoile toutes les 100ms

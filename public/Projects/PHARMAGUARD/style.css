@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #c6f5ff, #09384a, #000); /* Dégradé bleu clair vers noir */
+    color: #f2f2f2;
+    min-height: 100vh; /* Assure que la hauteur couvre toute la fenêtre */
+  }
+  
+  header, .project, footer, .modal-content {
+    background-color: #333;
+    color: white;
+  }
+  #intro {
+    background: url('assets/images/Pharmaguard.png') no-repeat center center/cover;
+  }  
+  #intro {
+    background: url('assets/images/Pharmaguard.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  
+  .intro-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    transform: translateY(-300px);
+    color: #ffffff;
+  }
+  
+  .intro-text p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -20px; /* Positionnement ajusté juste sous le titre */
+    transform: translateY(-300px); /* Aligné avec le titre pour rester en place */
+  }
+  /* Section Styling */
+  section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+
+  /* Style de base pour le texte */
+  #pharmaguard {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ffffff; 
+    text-align: center;
+    font-family: 'Monospace', Lucida Console;
+  }
+  
+  /* Animation de base sans agrandissement */
+  @keyframes wordAnimation {
+    0%, 20%, 100% { color: inherit; text-shadow: none; }
+    40%, 60% { color: var(--color); text-shadow: 0 0 10px var(--color), 0 0 20px var(--color); }
+  }
+  
+  .animate {
+    display: inline-block;
+    animation: wordAnimation 2s ease-in-out forwards;
+  }
+  
+  /* Ajout de délais séquentiels pour chaque mot */
+  #pharma {
+    --color: #FFD700;
+    animation-delay: 0s;
+  }
+  
+  #gestion {
+    --color: #00FFFF;
+    animation-delay: 2s;
+  }
+
+  #efficaces {
+    --color: #960808;
+    animation-delay: 4s;
+  }
+
+  #javascript {
+    --color: #F0DB4F;
+    animation-delay: 6s;
+  }
+  
+  #php {
+    --color: #4F5B93;
+    animation-delay: 8s;
+  }
+  
+  #mysql {
+    --color: #00758F;
+    animation-delay: 10s;
+  }
+  
+  #html {
+    --color: #E34C26;
+    animation-delay: 12s;
+  }
+  
+  #css {
+    --color: #264de4;
+    animation-delay: 14s;
+  }
+  
+  #efficace {
+    --color: #32CD32;
+    animation-delay: 16s;
+  }
+  
+  #ambition {
+    --color: #FF4500;
+    animation-delay: 18s;
+  }
+  
+  #avenir {
+    --color: #8A2BE2;
+    animation-delay: 20s;
+  }
+  
+  /* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+#features {
+    padding: 40px 20px;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+#features h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur chaque ligne */
+    gap: 20px;
+}
+
+.feature {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    color: #87ceeb;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #dcdcdc;
+    line-height: 1.5;
+}
+
+#cta {
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#cta {
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border: none; /* Suppression des bordures */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-right: 10px;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Distinction sans bordure */
+    transition: all 0.3s ease;
+}
+
+/* Effet de survol (halo) */
+input[type="email"]:hover {
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Halo lumineux */
+}
+
+/* Effet de focus (clic) */
+input[type="email"]:focus {
+    transform: translateY(-3px); /* Légère élévation */
+    box-shadow: 0 4px 15px rgba(50, 150, 255, 0.8); /* Accentuation de l'halo */
+    outline: none; /* Suppression de l'effet focus par défaut */
+}
+
+button {
+    padding: 10px 20px;
+    background: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #001574;
+}
+
+#pros-cons {
+    padding: 20px 150px;
+    text-align: center;
+}
+
+#pros-cons h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.pros-cons-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+#pros, #cons {
+    flex: 1;
+    max-width: 45%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#pros h3, #cons h3 {
+    font-size: 1.8em;
+    color: #93c7ff;
+    margin-bottom: 15px;
+}
+
+#pros ul, #cons ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#pros li, #cons li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.pros-cons-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#pros li p, #cons li p {
+    font-size: 1.2em;
+    color: #58e3ff;
+    margin: 0;
+}
+
+#pros li:last-child, #cons li:last-child {
+    margin-bottom: 0;
+}
+
+footer {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8)); /* Dégradé adapté */
+    backdrop-filter: blur(5px); /* Ajout d'un léger flou pour un effet moderne */
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  footer nav {
+    margin: 15px 0;
+  }
+  
+  footer a:hover {
+    color: #ffffff;
+  }
+  
+  h5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .word-animation {
+    height: 25px;
+    overflow: hidden;
+  }
+  
+  .word-animation span {
+    color: #ffffff;
+    display: block;
+    animation: rotateSpin 4s infinite;
+  }
+  
+  .word-animation span.tel {
+    color: #ffffff;
+  }
+  
+  .word-animation span.tel2 {
+    color: #ffffff;
+  }
+  
+  .word-animation span.me {
+    color: #ffffff;
+  }
+  
+  .word-animation span.mail {
+    color: #ffffff;
+  }
+  
+  @keyframes rotateSpin {
+    10% {
+      transform: translateY(-102%);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    35% {
+      transform: translateY(-202%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    60% {
+      transform: translateY(-302%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    85% {
+      transform: translateY(-402%);
+    }
+    100% {
+      transform: translateY(-400%);
+    }
+  }
+  
