@@ -1,10 +1,11 @@
+//animation du loader
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("loader");
   const content = document.getElementById("content");
   const video = loader.querySelector("video");
 
   // Temps maximum d'attente (en millisecondes)
-  const maxWaitTime = 9000; // 15 secondes
+  const maxWaitTime = 9000; // 9 secondes
 
   const showContent = () => {
     loader.classList.add("fade-out");
@@ -15,12 +16,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 500); // Durée du fondu de sortie
   };
 
-  // Lorsque la page est chargée
+  // Fonction pour forcer la lecture de la vidéo
+  const forceVideoPlay = () => {
+    video.play().catch((error) => {
+      console.warn("Impossible de lire la vidéo automatiquement : ", error);
+    });
+  };
+
+  // Gestion des événements pour afficher le contenu après la vidéo ou le délai maximum
   window.addEventListener("load", function () {
-    video.onended = showContent; // Fin de la vidéo
-    setTimeout(showContent, maxWaitTime); // Temps maximum atteint
+    // Tenter de jouer la vidéo
+    forceVideoPlay();
+
+    // Lorsque la vidéo se termine
+    video.onended = showContent;
+
+    // Sauvegarde : Si la vidéo n'a pas fini avant le temps max, afficher le contenu
+    setTimeout(showContent, maxWaitTime);
   });
+
+  // Optionnel : Réessayer de jouer la vidéo si elle n'a pas démarré dans les 100ms (utile pour certains navigateurs mobiles)
+  setTimeout(forceVideoPlay, 100);
 });
+
 
 //Animation des phrases
 const phrases = [
