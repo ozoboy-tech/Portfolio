@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = loader.querySelector("video");
 
   // Temps maximum d'attente (en millisecondes)
-  const maxWaitTime = 9000; // 9 secondes
+  const maxWaitTime = 5000; // 5 secondes
 
   const showContent = () => {
     loader.classList.add("fade-out");

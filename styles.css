@@ -62,23 +62,6 @@ header, .project, footer, .modal-content {
   background-color: #111;
   z-index: 9999;
 }
-/* Animation de rotation */
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Animation de pulsation */
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* Animation de changement de couleur pour le texte */
-@keyframes color-change {
-  0%, 100% { color: #3498db; }
-  50% { color: #e74c3c; }
-}
 
 /* Animation de fondu en sortie */
 .fade-out {
